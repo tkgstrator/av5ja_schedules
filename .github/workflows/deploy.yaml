@@ -1,0 +1,30 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'
+      - '!master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.1.1
+          no-cache: false
+
+      - name: Install
+        run: |
+          bun install --frozen-lockfile --ignore-scripts
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
