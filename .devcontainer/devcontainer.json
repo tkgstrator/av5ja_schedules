@@ -5,6 +5,9 @@
   "workspaceFolder": "/home/bun/app",
   "shutdownAction": "stopCompose",
   "remoteUser": "bun",
+  "remoteEnv": {
+    "WAKATIME_API_KEY": "${localEnv:WAKATIME_API_KEY}"
+  },
   "mounts": [
     "source=${env:HOME}/home/bun/.ssh,target=/.ssh,type=bind,consistency=cached,readonly"
   ],
@@ -28,6 +31,7 @@
         "GitHub.copilot",
         "GitHub.copilot-chat",
         "PKief.material-icon-theme",
+        "WakaTime.vscode-wakatime",
         "antfu.file-nesting",
         "biomejs.biome",
         "bradlc.vscode-tailwindcss",
