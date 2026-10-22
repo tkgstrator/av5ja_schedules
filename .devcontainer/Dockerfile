@@ -1,6 +1,6 @@
 FROM oven/bun:1.1.7
-COPY --from=node:20.13.1 /usr/local/bin/node /usr/local/bin/node
-COPY --from=node:20.13.1 /opt/yarn* /opt/yarn/
+COPY --from=node:22.23.4 /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:22.23.4 /opt/yarn* /opt/yarn/
 
 RUN ln -fs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
 RUN ln -fs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npx
