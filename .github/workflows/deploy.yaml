@@ -22,7 +22,7 @@ jobs:
 
       - name: Install
         run: |
-          bun install --frozen-lockfile --production --ignore-scripts
+          bun install --frozen-lockfile --ignore-scripts
 
       - name: Build
         run: |
